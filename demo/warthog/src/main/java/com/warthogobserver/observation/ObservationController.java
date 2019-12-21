@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class ObservationController {
 
     @Autowired
@@ -23,6 +24,7 @@ public class ObservationController {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/rest/observation")
     ResponseEntity<List<Observation>> allObservations(){
         try{

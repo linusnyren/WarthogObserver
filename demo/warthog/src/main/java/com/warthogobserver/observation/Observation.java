@@ -26,6 +26,6 @@ public class Observation {
     List<Animal> animals;
 
     String date;
-    private int lng, lat;
+    private double lng, lat;
 
 }
