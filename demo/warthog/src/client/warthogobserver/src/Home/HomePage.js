@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import axios from 'axios'
 import ObservationMap from '../Map/ObservationMap'
+import Header from './Header'
 export default function HomePage(){
     const [observations, setObservations] = useState([])
     useEffect(() => {
@@ -11,8 +12,13 @@ export default function HomePage(){
     },[])
 
     return(
-        <div style={{width:'100%', height:'1000px'}}>
-        {observations.length > 0 ? <ObservationMap data={observations}/> : <h1>Loading</h1>}
+        <div>
+        <div style={{padding: 5}}>
+            <Header/>
+        </div>
+        <div style={{width:'100%', height:'800px'}}>
+            <ObservationMap data={observations}/>
+        </div>
         </div>
     )
 }
