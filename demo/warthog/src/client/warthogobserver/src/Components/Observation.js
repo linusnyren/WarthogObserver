@@ -17,7 +17,10 @@ export default function Observation(props){
 
     const addObservation = () => {
       axios.post("http://localhost:8080/rest/observation/"+phone, observation)
-      .then(res => props.setObservations(props.observations, [...props.observations, res.data]))
+      .then(res => {
+        props.setObservations(props.observations, [...props.observations, res.data])
+        alert('Tack för ditt bidrag! \n uppdatera sidan...')
+      })
     }
     const formatDate = (datum) => {
       let date = new Date(datum)

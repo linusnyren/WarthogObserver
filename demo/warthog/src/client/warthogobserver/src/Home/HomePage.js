@@ -10,13 +10,13 @@ export default function HomePage(){
            setObservations(res.data)
         })
     },[])
-
+    console.log(window.innerWidth)
     return(
         <div>
         <div style={{padding: 5}}>
             <Header setObservations={setObservations.bind(this)}/>
         </div>
-        <div style={{width:'100%', height:'800px'}}>
+        <div style={{width: (window.innerWidth)+"px", height:(window.innerHeight-50)+"px"}}>
             <ObservationMap data={observations} setObservations={setObservations.bind(this)}/>
         </div>
         </div>

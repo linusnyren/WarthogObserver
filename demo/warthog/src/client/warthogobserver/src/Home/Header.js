@@ -10,9 +10,9 @@ export default function Header(props){
                 <Col>
                     <RegisterModal/>
                 </Col>
-                <Col>
+                {/*<Col>
                     <Search setObservations={props.setObservations.bind(this)}/>
-                </Col>
+                </Col>*/}
             </Row>
         </Container>
     )
