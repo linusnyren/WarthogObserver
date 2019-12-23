@@ -1,8 +1,8 @@
 import React from 'react'
 import RegisterModal from './../Components/RegisterModal'
-import Observation from './../Components/ObservationModal'
 import {Container, Row, Col} from 'react-bootstrap'
-export default function Header(){
+import Search from '../Components/Search'
+export default function Header(props){
 
     return(
         <Container>
@@ -11,7 +11,7 @@ export default function Header(){
                     <RegisterModal/>
                 </Col>
                 <Col>
-                    <Observation />
+                    <Search setObservations={props.setObservations.bind(this)}/>
                 </Col>
             </Row>
         </Container>

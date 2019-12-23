@@ -14,10 +14,10 @@ public class ObservationController {
     @Autowired
     ObservationService observationService;
 
-    @PostMapping("/rest/observation/{userid}")
-    ResponseEntity<Observation> addObservation(@RequestBody Observation observation, @PathVariable long userid){
+    @PostMapping("/rest/observation/{phone}")
+    ResponseEntity<Observation> addObservation(@RequestBody Observation observation, @PathVariable String phone){
         try{
-            return new ResponseEntity<>(observationService.addObservation(observation, userid), HttpStatus.CREATED);
+            return new ResponseEntity<>(observationService.addObservation(observation, phone), HttpStatus.CREATED);
         }
         catch(Exception e){
             System.out.println(e.getMessage());
@@ -27,11 +27,8 @@ public class ObservationController {
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/rest/observation")
     ResponseEntity<List<Observation>> allObservations(){
-        try{
             return new ResponseEntity<>(observationService.allObservations(), HttpStatus.OK);
-        }
-        catch(Exception e){
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-        }
+
+
     }
 }

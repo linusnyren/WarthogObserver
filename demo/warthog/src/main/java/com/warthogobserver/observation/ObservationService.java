@@ -15,10 +15,10 @@ public class ObservationService {
     @Autowired
     UserEntityService userEntityService;
 
-    public Observation addObservation(Observation observation, long userid) {
-        UserEntity userEntity  = userEntityService.getUser(userid);
+    public Observation addObservation(Observation observation, String phone ) {
+        UserEntity userEntity  = userEntityService.getUserByPhone(phone);
         if(userEntity.getFirstName() != null) {
-            observation.setUser(userEntityService.getUser(userid));
+            observation.setUser(userEntity);
             observationRepository.save(observation);
             return observation;
         }

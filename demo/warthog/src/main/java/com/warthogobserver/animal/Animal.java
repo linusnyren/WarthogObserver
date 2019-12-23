@@ -18,5 +18,5 @@ public class Animal {
     private long id;
 
     private String type;
-    private int age;
+    private int amount;
 }

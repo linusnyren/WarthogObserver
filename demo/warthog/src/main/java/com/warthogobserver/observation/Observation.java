@@ -22,8 +22,8 @@ public class Observation {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     UserEntity user;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    List<Animal> animals;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    Animal animal;
 
     String date;
     private double lng, lat;

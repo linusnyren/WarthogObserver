@@ -17,4 +17,8 @@ public class UserEntityService {
     public UserEntity getUser(long userid) {
         return userEntityRepository.findById(userid);
     }
+
+    public UserEntity getUserByPhone(String phone) {
+        return userEntityRepository.findByPhone(phone);
+    }
 }

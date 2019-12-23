@@ -14,10 +14,10 @@ export default function HomePage(){
     return(
         <div>
         <div style={{padding: 5}}>
-            <Header/>
+            <Header setObservations={setObservations.bind(this)}/>
         </div>
         <div style={{width:'100%', height:'800px'}}>
-            <ObservationMap data={observations}/>
+            <ObservationMap data={observations} setObservations={setObservations.bind(this)}/>
         </div>
         </div>
     )
